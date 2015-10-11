@@ -1,5 +1,5 @@
 #########################################################################
-# This is configuration file has been copied from:
+# This configuration file has been copied from:
 # https://github.com/SUSE/machinery/blob/master/.rubocop.yml
 #########################################################################
 
@@ -65,3 +65,4 @@ Style/SignalException:
 Style/NumericLiterals:
   StyleGuide: https://github.com/SUSE/style-guides/blob/master/Ruby.md#stylenumericliterals
   Enabled: false
+
