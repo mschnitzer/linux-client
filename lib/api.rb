@@ -22,6 +22,16 @@ class API
     parsed_response["api_version"]
   end
 
+  def search_plugins(plugins)
+    uri = build_uri("/search")
+    send_data(uri, JSON.generate({ :plugins => plugins }))
+  end
+
+  def send_data(uri, data)
+    res = Net::HTTP.post_form(uri, "data" => data)
+    res.body
+  end
+
   def build_uri(api)
     URI(build_url(api))
   end
