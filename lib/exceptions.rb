@@ -1,0 +1,1 @@
+class InvalidAPIResponse < Exception; end
