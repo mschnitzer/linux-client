@@ -15,5 +15,10 @@ describe "Display" do
 EOF
     expect { Display.new.show_search_result(data) }.to output(expected_output).to_stdout
   end
+
+  it "outputs nothing when no plugin was found" do
+    expect { Display.new.show_search_result([]) }.to output("").to_stdout
+    expect { Display.new.show_search_result([]) }.to output("").to_stderr
+  end
   
 end
