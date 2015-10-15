@@ -1,6 +1,7 @@
 require "gli"
 require_relative "api"
 require_relative "display"
+require_relative "exceptions"
 include GLI::App
 
 program_desc "A SA:MP server plugin manager"
@@ -17,8 +18,7 @@ arg "NAME"
 command [:search,:se] do |c|
   c.action do |g,o,args|
     if args.length < 1
-      puts "You have to provide at least one plugin name."
-      exit 1
+      raise InvalidCommandLine.new("You have to provide at least one plugin name.")
     end
 
     plugins = args
