@@ -1,4 +1,4 @@
-require_relative '../../lib/api'
+require_relative "../../lib/api"
 
 describe "API" do
 
@@ -20,9 +20,11 @@ describe "API" do
   end
 
   it "checks if the server respons with a valid search result" do
-    expect(@api.search_plugins([ "hashlib" ])).to eq('[{"plugin":"hashlib","author":"mschnitzer"}]')
+    expect(@api.search_plugins([ "hashlib" ])).to eq('[{"plugin":"hashlib","author":"mschnitzer",' \
+      '"version":"1.0.0","smalldesc":"A hashing plugin which supports many hashing algorithms."}]')
     expect(@api.search_plugins([ "hashlib", "hash" ])).to eq('[{"plugin":"hashlib","author":' \
-      '"mschnitzer"},{"plugin":"hashlib","author":"mschnitzer"}]')
+      '"mschnitzer","version":"1.0.0","smalldesc":"A hashing plugin which supports many hashing ' \
+      'algorithms."}]')
   end
 
   it "checks if send data returns the response of a server" do
