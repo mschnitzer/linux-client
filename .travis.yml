@@ -1,6 +1,5 @@
 language: ruby
-sudo: required
 before_install:
-    - apt-get install ruby-rspec
+    - sudo apt-get install ruby-rspec
 script:
     - rspec spec/unit
