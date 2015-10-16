@@ -1,5 +1,5 @@
 language: ruby
-#before_install:
-#    - gem install byebug
+before_install:
+    - apt-get install ruby-rspec
 script:
     - rspec spec/unit
